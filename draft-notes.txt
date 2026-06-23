@@ -102,3 +102,25 @@ Here's the summary of those issues:
     type: object
     properties:
       status: { type: string }
+
+
+######
+
+Schema
+missing-schema-fallback
+impossible-min-properties
+allof-contradiction
+oneof-duplicate-discriminator
+
+Headers
+accept-response-content-type-conflict
+content-type-header-conflict
+authorization-header-conflict
+
+HTTP Semantics
+bad-request-response-without-input
+response-204-with-body
+
+Others
+ambiguous-sibling-paths
+query-serialization-collision

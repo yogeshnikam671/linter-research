@@ -1,0 +1,5 @@
+validating demo-scenarios/openapi.yaml...
+demo-scenarios/openapi.yaml: validated in 7ms
+
+Woohoo! Your API description is valid. 🎉
+

@@ -1,0 +1,623 @@
+Specmatic Enterprise v1.18.1-SNAPSHOT(523c7955)
+Specmatic Core v2.48.1-SNAPSHOT(261d139b)
+
+{
+  "version": "0.1.7-SNAPSHOT",
+  "problems": [
+    {
+      "ruleId": "specmatic/allof-contradictory-constraints",
+      "severity": "error",
+      "message": "allOf branches make property \"currency\" unsatisfiable because allowed values do not overlap: \"USD\", \"EUR\"",
+      "type": "schema",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1accounts/post/requestBody/content/application~1json/schema/allOf"
+        }
+      ],
+      "requiredForMaturity": "Platinum"
+    },
+    {
+      "ruleId": "specmatic/duplicate-oneof-discriminator",
+      "severity": "error",
+      "message": "Discriminator property \"type\" reuses value \"user\" across oneOf branches (UserActor and CompanyActor)",
+      "type": "schema",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/Actor/discriminator"
+        }
+      ],
+      "requiredForMaturity": "Platinum"
+    },
+    {
+      "ruleId": "specmatic/impossible-object-cardinality",
+      "severity": "error",
+      "message": "Object requires at least 3 properties but only 2 declared properties are allowed when additionalProperties is false",
+      "type": "schema",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1configs/post/requestBody/content/application~1json/schema/minProperties"
+        }
+      ],
+      "requiredForMaturity": "Platinum"
+    },
+    {
+      "ruleId": "specmatic/query-param-collision",
+      "severity": "error",
+      "message": "Query parameter id conflicts with form-exploded object query parameter filter.id",
+      "type": "parameters",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1search/get/parameters/0"
+        }
+      ],
+      "requiredForMaturity": "Platinum"
+    },
+    {
+      "ruleId": "specmatic/response-body-not-allowed",
+      "severity": "error",
+      "message": "Response 204 must not define body content",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1users/get/responses/204/content"
+        }
+      ],
+      "requiredForMaturity": "Platinum"
+    },
+    {
+      "ruleId": "path-segment-plural",
+      "severity": "warn",
+      "message": "path segment `pending` should be plural.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1orders~1pending"
+        }
+      ]
+    },
+    {
+      "ruleId": "path-segment-plural",
+      "severity": "warn",
+      "message": "path segment `search` should be plural.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1search"
+        }
+      ]
+    },
+    {
+      "ruleId": "no-ambiguous-paths",
+      "severity": "warn",
+      "message": "Paths should resolve unambiguously. Found two ambiguous paths: `/orders/{status}` and `/orders/pending`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1orders~1pending"
+        }
+      ]
+    },
+    {
+      "ruleId": "required-string-property-missing-min-length",
+      "severity": "warn",
+      "message": "Property minLength is required.",
+      "type": "schema",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/UserActor/properties/type"
+        }
+      ]
+    },
+    {
+      "ruleId": "required-string-property-missing-min-length",
+      "severity": "warn",
+      "message": "Property minLength is required.",
+      "type": "schema",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/UserActor/properties/name"
+        }
+      ]
+    },
+    {
+      "ruleId": "required-string-property-missing-min-length",
+      "severity": "warn",
+      "message": "Property minLength is required.",
+      "type": "schema",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/CompanyActor/properties/type"
+        }
+      ]
+    },
+    {
+      "ruleId": "required-string-property-missing-min-length",
+      "severity": "warn",
+      "message": "Property minLength is required.",
+      "type": "schema",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/CompanyActor/properties/company"
+        }
+      ]
+    },
+    {
+      "ruleId": "required-string-property-missing-min-length",
+      "severity": "warn",
+      "message": "Property minLength is required.",
+      "type": "schema",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1imports/post/requestBody/content/application~1json/schema/properties/fileName"
+        }
+      ]
+    },
+    {
+      "ruleId": "required-string-property-missing-min-length",
+      "severity": "warn",
+      "message": "Property minLength is required.",
+      "type": "schema",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1accounts/post/requestBody/content/application~1json/schema/allOf/0/properties/currency"
+        }
+      ]
+    },
+    {
+      "ruleId": "required-string-property-missing-min-length",
+      "severity": "warn",
+      "message": "Property minLength is required.",
+      "type": "schema",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1accounts/post/requestBody/content/application~1json/schema/allOf/1/properties/currency"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/UserActor/properties/type"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/UserActor/properties/name"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/CompanyActor/properties/type"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/CompanyActor/properties/company"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1search/get/parameters/1/schema/properties/id"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1imports/post/requestBody/content/application~1json/schema/properties/fileName"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1accounts/post/requestBody/content/application~1json/schema/allOf/0/properties/currency"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1accounts/post/requestBody/content/application~1json/schema/allOf/1/properties/currency"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1configs/post/requestBody/content/application~1json/schema/properties/name"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1configs/post/requestBody/content/application~1json/schema/properties/mode"
+        }
+      ]
+    },
+    {
+      "ruleId": "scalar-property-missing-example",
+      "severity": "warn",
+      "message": "Scalar property should define an example.",
+      "type": "examples",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1exports/get/responses/200/content/application~1json/schema/properties/exportId"
+        }
+      ]
+    },
+    {
+      "ruleId": "spec-strict-refs",
+      "severity": "warn",
+      "message": "Field $ref is not expected here.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1actors/post/requestBody/content/application~1json/schema/$ref"
+        }
+      ]
+    },
+    {
+      "ruleId": "spec-strict-refs",
+      "severity": "warn",
+      "message": "Field $ref is not expected here.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/Actor/oneOf/0/$ref"
+        }
+      ]
+    },
+    {
+      "ruleId": "spec-strict-refs",
+      "severity": "warn",
+      "message": "Field $ref is not expected here.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/components/schemas/Actor/oneOf/1/$ref"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1exports/get/responses/406"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1imports/post/responses/400"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1payments/get/responses/401"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1users/get/responses/400"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1orders~1{status}/get/responses/400"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1orders~1pending/get/responses/400"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1search/get/responses/400"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1accounts/post/responses/400"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1configs/post/responses/400"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1actors/post/responses/400"
+        }
+      ]
+    },
+    {
+      "ruleId": "specmatic/accept-response-content-type-conflict",
+      "severity": "warn",
+      "message": "Accept header values application/xml do not allow response Content-Type \"application/json\"",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1exports/get"
+        }
+      ]
+    },
+    {
+      "ruleId": "specmatic/content-type-header-declared",
+      "severity": "warn",
+      "message": "Content-Type should not be declared as a header per OAS standards",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1imports/post/parameters/0"
+        }
+      ]
+    },
+    {
+      "ruleId": "specmatic/content-type-header-overrides-media-type",
+      "severity": "warn",
+      "message": "Media type \"application/json\" does not match the respective Content-Type header. Using the Content-Type header as an override",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1imports/post/parameters/0"
+        }
+      ]
+    },
+    {
+      "ruleId": "specmatic/security-property-redefined",
+      "severity": "warn",
+      "message": "Found header parameter with same name as Bearer Authorization",
+      "type": "security",
+      "location": [
+        {
+          "source": {
+            "ref": "demo-scenarios/openapi.yaml"
+          },
+          "pointer": "#/paths/~1payments/get/parameters/0/name"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "errors": 5,
+    "warnings": 38,
+    "ignored": 0
+  },
+  "maturity": {
+    "level": "Gold"
+  }
+}

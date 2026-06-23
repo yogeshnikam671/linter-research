@@ -1,0 +1,294 @@
+openapi: 3.1.0
+info:
+  title: Combined Runtime Demo
+  version: 1.0.0
+  description: Single OpenAPI spec containing multiple runtime-oriented issues.
+  contact:
+    name: Demo Team
+  license:
+    name: Apache-2.0
+    identifier: Apache-2.0
+servers:
+  - url: https://api.demo.internal
+tags:
+  - name: demo
+    description: Combined runtime demo scenarios.
+paths:
+  /exports:
+    get:
+      operationId: exportData
+      summary: Export data
+      description: Demonstrates Accept header mismatch.
+      tags: [demo]
+      security: []
+      parameters:
+        # 🔎 Issue: accept-response-content-type-conflict
+        - name: Accept
+          in: header
+          required: true
+          description: Required output media type.
+          schema:
+            type: string
+            enum: [application/xml]
+      responses:
+        "200":
+          description: Successful export.
+          content:
+            # ⚠️ Client asks for XML, response only offers JSON.
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exportId:
+                    type: string
+        "406":
+          description: Not acceptable.
+  /imports:
+    post:
+      operationId: importData
+      summary: Import data
+      description: Demonstrates Content-Type header mismatch.
+      tags: [demo]
+      security: []
+      parameters:
+        # 🔎 Issue: content-type-header-conflict
+        - name: Content-Type
+          in: header
+          required: true
+          description: Declared request media type.
+          schema:
+            type: string
+            enum: [application/xml]
+      requestBody:
+        required: true
+        content:
+          # ⚠️ Header says XML, request body only allows JSON.
+          application/json:
+            schema:
+              type: object
+              properties:
+                fileName:
+                  type: string
+              required: [fileName]
+      responses:
+        "201":
+          description: Import created.
+        "400":
+          description: Bad request.
+  /payments:
+    get:
+      operationId: listPayments
+      summary: List payments
+      description: Demonstrates authorization contract mismatch.
+      tags: [demo]
+      security:
+        - bearerAuth: []
+      parameters:
+        # 🔎 Issue: authorization-header-conflict
+        - name: Authorization
+          in: header
+          required: true
+          description: Auth header contract.
+          schema:
+            # ⚠️ Security scheme says Bearer, header regex says Basic.
+            type: string
+            pattern: "^Basic [A-Za-z0-9+/=]+$"
+      responses:
+        "200":
+          description: Payment list.
+        "401":
+          description: Unauthorized.
+  /users:
+    get:
+      operationId: listUsers
+      summary: List users
+      description: Demonstrates 204 with content.
+      tags: [demo]
+      security: []
+      responses:
+        "204":
+          description: No content.
+          content:
+            # 🔎 Issue: response-204-with-body
+            # ⚠️ 204 must not define body content.
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        "400":
+          description: Bad request.
+  /orders/{status}:
+    get:
+      operationId: listOrdersByStatus
+      summary: List orders by status
+      description: Demonstrates ambiguous sibling path.
+      tags: [demo]
+      security: []
+      parameters:
+        - name: status
+          in: path
+          required: true
+          description: Order status.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Orders found.
+        "400":
+          description: Bad request.
+  /orders/pending:
+    # 🔎 Issue: ambiguous-sibling-paths
+    # ⚠️ /orders/pending can also match /orders/{status}.
+    get:
+      operationId: listPendingOrders
+      summary: List pending orders
+      description: Demonstrates ambiguous sibling path.
+      tags: [demo]
+      security: []
+      responses:
+        "200":
+          description: Pending orders found.
+        "400":
+          description: Bad request.
+  /search:
+    get:
+      operationId: searchRecords
+      summary: Search records
+      description: Demonstrates query serialization collision.
+      tags: [demo]
+      security: []
+      parameters:
+        # 🔎 Issue: query-serialization-collision
+        - name: id
+          in: query
+          required: false
+          description: Top-level id filter.
+          schema:
+            type: string
+        - name: filter
+          in: query
+          required: false
+          description: Filter object.
+          style: form
+          explode: true
+          schema:
+            type: object
+            properties:
+              # ⚠️ `filter.id` collides on wire with top-level `id`.
+              id:
+                type: string
+      responses:
+        "200":
+          description: Search results.
+        "400":
+          description: Bad request.
+  /accounts:
+    post:
+      operationId: createAccount
+      summary: Create account
+      description: Demonstrates impossible allOf composition.
+      tags: [demo]
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              # 🔎 Issue: allof-contradiction
+              # ⚠️ Same property forced to be both USD and EUR.
+              allOf:
+                - type: object
+                  required: [currency]
+                  properties:
+                    currency:
+                      type: string
+                      enum: [USD]
+                - type: object
+                  required: [currency]
+                  properties:
+                    currency:
+                      type: string
+                      enum: [EUR]
+      responses:
+        "201":
+          description: Account created.
+        "400":
+          description: Bad request.
+  /configs:
+    post:
+      operationId: createConfig
+      summary: Create config
+      description: Demonstrates impossible minProperties.
+      tags: [demo]
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              # 🔎 Issue: impossible-min-properties
+              # ⚠️ Needs 3 props, but only 2 allowed and extras forbidden.
+              type: object
+              minProperties: 3
+              additionalProperties: false
+              properties:
+                name:
+                  type: string
+                mode:
+                  type: string
+      responses:
+        "201":
+          description: Config created.
+        "400":
+          description: Bad request.
+  /actors:
+    post:
+      operationId: createActor
+      summary: Create actor
+      description: Demonstrates duplicate oneOf discriminator values.
+      tags: [demo]
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Actor"
+      responses:
+        "201":
+          description: Actor created.
+        "400":
+          description: Bad request.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    Actor:
+      # 🔎 Issue: oneof-duplicate-discriminator
+      # ⚠️ Both branches reuse same discriminator value: `user`.
+      discriminator:
+        propertyName: type
+      oneOf:
+        - $ref: "#/components/schemas/UserActor"
+        - $ref: "#/components/schemas/CompanyActor"
+    UserActor:
+      type: object
+      required: [type, name]
+      properties:
+        type:
+          type: string
+          const: user
+        name:
+          type: string
+    CompanyActor:
+      type: object
+      required: [type, company]
+      properties:
+        type:
+          type: string
+          const: user
+        company:
+          type: string
