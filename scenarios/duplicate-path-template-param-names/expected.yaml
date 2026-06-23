@@ -1,0 +1,16 @@
+intent: Detect duplicate route templates that differ only by path parameter name.
+verificationStatus: verified
+actual:
+  spectral: hit
+  redocly: hit
+  vacuum: miss
+  specmatic: hit
+evidence:
+  spectral:
+    - path-params
+  redocly:
+    - no-identical-paths
+    - no-ambiguous-paths
+  specmatic:
+    - no-identical-paths
+    - no-ambiguous-paths

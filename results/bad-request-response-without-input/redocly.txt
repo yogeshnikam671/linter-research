@@ -1,11 +1,12 @@
-npm error code ENOTFOUND
-npm error syscall getaddrinfo
-npm error errno ENOTFOUND
-npm error network request to https://registry.npmjs.org/@redocly%2fcli failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
-npm error network This is a problem related to network connectivity.
-npm error network In most cases you are behind a proxy or have bad network settings.
-npm error network
-npm error network If you are behind a proxy, please make sure that the
-npm error network 'proxy' config is set properly.  See: 'npm help config'
-npm error Log files were not written due to an error writing to the directory: /Users/yogeshanandanikam/.npm/_logs
-npm error You can rerun the command with `--loglevel=verbose` to see the logs in your terminal
+validating scenarios/bad-request-response-without-input/openapi.yaml...
+scenarios/bad-request-response-without-input/openapi.yaml:
+  1:1  error    no-empty-servers   Servers must be present.
+  7:5  error    operation-summary  Operation object should contain `summary` field.
+  7:5  error    security-defined   Every operation should have security defined on it or on the root level.
+  2:1  warning  info-license       Info object should contain `license` field.
+
+scenarios/bad-request-response-without-input/openapi.yaml: validated in 5ms
+
+❌ Validation failed with 3 errors and 1 warning.
+run `redocly lint --generate-ignore-file` to add all problems to the ignore file.
+

@@ -1,0 +1,22 @@
+openapi: 3.0.3
+info:
+  title: 206 Without Content-Range
+  version: 1.0.0
+paths:
+  /files/{fileId}:
+    get:
+      operationId: downloadPartialFile
+      parameters:
+        - name: fileId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "206":
+          description: Partial content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary

@@ -1,4 +1,4 @@
-(node:37817) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(node:73869) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
 
 /Users/yogeshanandanikam/Notes/specmatic/demo/scenarios/accept-response-content-type-conflict/openapi.yaml

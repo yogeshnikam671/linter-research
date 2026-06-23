@@ -1,0 +1,13 @@
+openapi: 3.0.3
+info:
+  title: 429 Without Retry-After
+  version: 1.0.0
+paths:
+  /search:
+    get:
+      operationId: search429
+      responses:
+        "200":
+          description: OK
+        "429":
+          description: Too many requests

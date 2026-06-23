@@ -29,14 +29,14 @@
  ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
  operation-description                     2             ██████████████████████████████████████████████████
  oas3-missing-example                      2             ██████████████████████████████████████████████████
- owasp-protection-global-unsafe-strict     1             █████████████████████████                         
- info-license                              1             █████████████████████████                         
- owasp-define-error-responses-500          1             █████████████████████████                         
- owasp-define-error-validation             1             █████████████████████████                         
- info-description                          1             █████████████████████████                         
+ info-contact                              1             █████████████████████████                         
+ operation-tags                            1             █████████████████████████                         
+ owasp-protection-global-unsafe            1             █████████████████████████                         
  oas3-parameter-description                1             █████████████████████████                         
- owasp-string-restricted                   1             █████████████████████████                         
- owasp-rate-limit                          1             █████████████████████████                         
+ operation-4xx-response                    1             █████████████████████████                         
+ owasp-define-error-responses-500          1             █████████████████████████                         
+ info-description                          1             █████████████████████████                         
+ owasp-define-error-responses-401          1             █████████████████████████                         
  ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
  total                                     20          
  ... and 8 more rules

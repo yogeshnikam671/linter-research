@@ -1,0 +1,7 @@
+intent: Detect 204 response that incorrectly defines content.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

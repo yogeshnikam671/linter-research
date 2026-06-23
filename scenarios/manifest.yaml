@@ -35,6 +35,30 @@ implemented:
     category: response-semantics
   - slug: method-returns-201
     category: response-semantics
+  - slug: response-204-with-body
+    category: response-semantics
+  - slug: response-304-with-body
+    category: response-semantics
+  - slug: head-response-body
+    category: response-semantics
+  - slug: response-206-without-content-range
+    category: response-semantics
+  - slug: response-202-without-monitor-link
+    category: response-semantics
+  - slug: missing-www-authenticate-on-401
+    category: auth-semantics
+  - slug: missing-retry-after-on-429
+    category: response-semantics
+  - slug: readonly-required-in-request
+    category: schema-logic
+  - slug: writeonly-required-in-response
+    category: schema-logic
+  - slug: overlapping-oneof-branches
+    category: schema-logic
+  - slug: duplicate-path-template-param-names
+    category: path-semantics
+  - slug: path-template-param-mismatch
+    category: path-semantics
 backlog:
   - specmatic/missing-schema-fallback
   - specmatic/pattern-length-incompatible
@@ -45,8 +69,5 @@ backlog:
   - discriminator-property-not-required
   - discriminator-property-type-mismatch
   - no-success-statuses-with-security
-  - response-204-with-body
   - get-with-required-request-body
-  - response-304-with-body
-  - head-response-body
   - redirect-302-without-location

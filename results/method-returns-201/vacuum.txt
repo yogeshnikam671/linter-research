@@ -28,15 +28,15 @@
  rule                                      violations    quality impact                                    
  ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
  operation-description                     4             ██████████████████████████████████████████████████
- owasp-define-error-responses-500          3             █████████████████████████████████████             
- owasp-define-error-validation             3             █████████████████████████████████████             
  operation-tags                            3             █████████████████████████████████████             
  owasp-define-error-responses-401          3             █████████████████████████████████████             
+ owasp-rate-limit                          3             █████████████████████████████████████             
+ owasp-define-error-responses-500          3             █████████████████████████████████████             
  operation-4xx-response                    3             █████████████████████████████████████             
  owasp-define-error-responses-429          3             █████████████████████████████████████             
- owasp-rate-limit                          3             █████████████████████████████████████             
- owasp-protection-global-unsafe-strict     2             █████████████████████████                         
+ owasp-define-error-validation             3             █████████████████████████████████████             
  oas3-missing-example                      2             █████████████████████████                         
+ owasp-string-restricted                   2             █████████████████████████                         
  ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
  total                                     42          
  ... and 10 more rules

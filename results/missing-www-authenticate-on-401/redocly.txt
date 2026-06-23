@@ -1,0 +1,11 @@
+validating scenarios/missing-www-authenticate-on-401/openapi.yaml...
+scenarios/missing-www-authenticate-on-401/openapi.yaml:
+  1:1  error    no-empty-servers   Servers must be present.
+  9:5  error    operation-summary  Operation object should contain `summary` field.
+  2:1  warning  info-license       Info object should contain `license` field.
+
+scenarios/missing-www-authenticate-on-401/openapi.yaml: validated in 5ms
+
+❌ Validation failed with 2 errors and 1 warning.
+run `redocly lint --generate-ignore-file` to add all problems to the ignore file.
+

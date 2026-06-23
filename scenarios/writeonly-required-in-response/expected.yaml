@@ -1,0 +1,7 @@
+intent: Detect response schema that requires writeOnly property.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

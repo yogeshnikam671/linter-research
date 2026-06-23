@@ -1,0 +1,18 @@
+openapi: 3.0.3
+info:
+  title: 304 With Body
+  version: 1.0.0
+paths:
+  /users:
+    get:
+      operationId: listUsers304Body
+      responses:
+        "304":
+          description: Not modified
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cached:
+                    type: boolean

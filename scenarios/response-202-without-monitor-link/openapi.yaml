@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: 202 Without Monitor Link
+  version: 1.0.0
+paths:
+  /jobs:
+    post:
+      operationId: createJob202
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [task]
+              properties:
+                task:
+                  type: string
+      responses:
+        "202":
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [accepted]

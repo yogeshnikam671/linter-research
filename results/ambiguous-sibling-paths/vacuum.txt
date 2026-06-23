@@ -1,1 +1,50 @@
-permission denied while trying to connect to the docker API at unix:///Users/yogeshanandanikam/.docker/run/docker.sock
+   
+ ██╗   ██╗ █████╗  ██████╗██╗   ██╗██╗   ██╗███╗   ███╗ 《《《─═─═── ·* · ˙*
+ ██║   ██║██╔══██╗██╔════╝██║   ██║██║   ██║████╗ ████║《《《──═─═──· ··* ˙˙
+ ██║   ██║███████║██║     ██║   ██║██║   ██║██╔████╔██║《《《───═─═─··· ˙˙ ˙
+ ╚██╗ ██╔╝██╔══██║██║     ██║   ██║██║   ██║██║╚██╔╝██║《《──═─═──·* ·· ˙˙
+  ╚████╔╝ ██║  ██║╚██████╗╚██████╔╝╚██████╔╝██║ ╚═╝ ██║ 《《─═─═──* · · ˙
+   ╚═══╝  ╚═╝  ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝ 《───═─═─· ··* ˙˙ ˙
+
+ version: v0.29.4 | compiled: Thu, 18 Jun 2026 22:02:16 UTC
+ https://quobix.com/vacuum/ | https://github.com/daveshanley/vacuum
+
+ | 🚨 HARD MODE ENABLED 🚨
+
+ vacuuming file '/work/scenarios/ambiguous-sibling-paths/openapi.yaml' against 92 rules: https://quobix.com/vacuum/rulesets/all
+
+ category              ✗ errors      ▲ warnings    ● info                                                  
+ ────────────────────  ────────────  ────────────  ────────────────────────────────────────────────────────
+ Contract Information  1             0             2                                                       
+ Operations            0             2             1                                                       
+ Tags                  0             3             0                                                       
+ Validation            0             1             0                                                       
+ Descriptions          0             3             1                                                       
+ OWASP                 3             8             2                                                       
+ ────────────────────  ────────────  ────────────  ────────────────────────────────────────────────────────
+ total                 4             17            6                                                       
+
+ rule                                      violations    quality impact                                    
+ ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
+ operation-tags                            2             ██████████████████████████████████████████████████
+ operation-4xx-response                    2             ██████████████████████████████████████████████████
+ owasp-define-error-responses-500          2             ██████████████████████████████████████████████████
+ owasp-rate-limit                          2             ██████████████████████████████████████████████████
+ operation-description                     2             ██████████████████████████████████████████████████
+ owasp-protection-global-safe              2             ██████████████████████████████████████████████████
+ owasp-define-error-validation             2             ██████████████████████████████████████████████████
+ owasp-define-error-responses-401          2             ██████████████████████████████████████████████████
+ owasp-define-error-responses-429          2             ██████████████████████████████████████████████████
+ oas3-api-servers                          1             █████████████████████████                         
+ ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
+ total                                     27          
+ ... and 8 more rules
+
+ --> use the <dashboard> command to be able to navigate results interactively <--
+
+ | Quality Score: 34/100 [🤒]
+
+ | ✗ Failed with 4 errors, 17 warnings and 6 informs.
+
+ use --debug if you want to enable developer logging
+

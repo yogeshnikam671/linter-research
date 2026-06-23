@@ -28,15 +28,15 @@
  rule                                      violations    quality impact                                    
  ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
  oas3-missing-example                      3             ██████████████████████████████████████████████████
- oas3-parameter-description                2             █████████████████████████████████                 
  owasp-string-restricted                   2             █████████████████████████████████                 
- info-license                              1             ████████████████                                  
- operation-description                     1             ████████████████                                  
- operation-4xx-response                    1             ████████████████                                  
+ oas3-parameter-description                2             █████████████████████████████████                 
  owasp-define-error-validation             1             ████████████████                                  
- owasp-rate-limit                          1             ████████████████                                  
  openapi-tags                              1             ████████████████                                  
  operation-tags                            1             ████████████████                                  
+ oas3-api-servers                          1             ████████████████                                  
+ operation-description                     1             ████████████████                                  
+ owasp-protection-global-safe              1             ████████████████                                  
+ owasp-define-error-responses-401          1             ████████████████                                  
  ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
  total                                     21          
  ... and 7 more rules

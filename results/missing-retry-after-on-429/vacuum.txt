@@ -1,0 +1,49 @@
+   
+ ██╗   ██╗ █████╗  ██████╗██╗   ██╗██╗   ██╗███╗   ███╗ 《《《─═─═── ·* · ˙*
+ ██║   ██║██╔══██╗██╔════╝██║   ██║██║   ██║████╗ ████║《《《──═─═──· ··* ˙˙
+ ██║   ██║███████║██║     ██║   ██║██║   ██║██╔████╔██║《《《───═─═─··· ˙˙ ˙
+ ╚██╗ ██╔╝██╔══██║██║     ██║   ██║██║   ██║██║╚██╔╝██║《《──═─═──·* ·· ˙˙
+  ╚████╔╝ ██║  ██║╚██████╗╚██████╔╝╚██████╔╝██║ ╚═╝ ██║ 《《─═─═──* · · ˙
+   ╚═══╝  ╚═╝  ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝ 《───═─═─· ··* ˙˙ ˙
+
+ version: v0.29.4 | compiled: Thu, 18 Jun 2026 22:02:16 UTC
+ https://quobix.com/vacuum/ | https://github.com/daveshanley/vacuum
+
+ | 🚨 HARD MODE ENABLED 🚨
+
+ vacuuming file '/work/scenarios/missing-retry-after-on-429/openapi.yaml' against 92 rules: https://quobix.com/vacuum/rulesets/all
+
+ category              ✗ errors      ▲ warnings    ● info                                                  
+ ────────────────────  ────────────  ────────────  ────────────────────────────────────────────────────────
+ Contract Information  1             0             2                                                       
+ Tags                  0             2             0                                                       
+ Validation            0             1             0                                                       
+ Descriptions          0             1             0                                                       
+ OWASP                 2             4             1                                                       
+ ────────────────────  ────────────  ────────────  ────────────────────────────────────────────────────────
+ total                 3             8             3                                                       
+
+ rule                                      violations    quality impact                                    
+ ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
+ owasp-rate-limit                          2             ██████████████████████████████████████████████████
+ owasp-define-error-validation             1             █████████████████████████                         
+ oas3-api-servers                          1             █████████████████████████                         
+ info-contact                              1             █████████████████████████                         
+ info-description                          1             █████████████████████████                         
+ info-license                              1             █████████████████████████                         
+ owasp-define-error-responses-401          1             █████████████████████████                         
+ owasp-define-error-responses-500          1             █████████████████████████                         
+ owasp-protection-global-safe              1             █████████████████████████                         
+ owasp-define-error-responses-429          1             █████████████████████████                         
+ ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
+ total                                     14          
+ ... and 3 more rules
+
+ --> use the <dashboard> command to be able to navigate results interactively <--
+
+ | Quality Score: 52/100 [🤒]
+
+ | ✗ Failed with 3 errors, 8 warnings and 3 informs.
+
+ use --debug if you want to enable developer logging
+

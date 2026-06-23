@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: 401 Without WWW-Authenticate
+  version: 1.0.0
+security:
+  - bearerAuth: []
+paths:
+  /me:
+    get:
+      operationId: getProfile401
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

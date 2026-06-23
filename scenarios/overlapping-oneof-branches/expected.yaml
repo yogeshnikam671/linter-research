@@ -1,0 +1,7 @@
+intent: Detect oneOf branches that overlap and allow ambiguous matching.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

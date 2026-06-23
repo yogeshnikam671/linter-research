@@ -1,0 +1,26 @@
+openapi: 3.0.3
+info:
+  title: writeOnly Required In Response
+  version: 1.0.0
+paths:
+  /users/{userId}:
+    get:
+      operationId: getUserWriteOnly
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [password]
+                properties:
+                  password:
+                    type: string
+                    writeOnly: true

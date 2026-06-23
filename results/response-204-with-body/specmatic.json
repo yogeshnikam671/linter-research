@@ -1,0 +1,131 @@
+Specmatic Enterprise v1.16.0
+Specmatic Core v2.46.4
+
+{
+  "version": "0.1.4",
+  "problems": [
+    {
+      "ruleId": "no-empty-servers",
+      "severity": "error",
+      "message": "Servers must be present.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/response-204-with-body/openapi.yaml"
+          },
+          "pointer": "#/openapi"
+        }
+      ],
+      "requiredForMaturity": "Baseline"
+    },
+    {
+      "ruleId": "operation-summary",
+      "severity": "error",
+      "message": "Operation object should contain `summary` field.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/response-204-with-body/openapi.yaml"
+          },
+          "pointer": "#/paths/~1users/get/summary"
+        }
+      ],
+      "requiredForMaturity": "Bronze"
+    },
+    {
+      "ruleId": "security-defined",
+      "severity": "error",
+      "message": "Every operation should have security defined on it or on the root level.",
+      "type": "security",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/response-204-with-body/openapi.yaml"
+          },
+          "pointer": "#/paths/~1users/get"
+        }
+      ],
+      "requiredForMaturity": "Baseline"
+    },
+    {
+      "ruleId": "info-contact",
+      "severity": "warn",
+      "message": "Info object should contain `contact` field.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/response-204-with-body/openapi.yaml"
+          },
+          "pointer": "#/info/contact"
+        }
+      ]
+    },
+    {
+      "ruleId": "info-license",
+      "severity": "warn",
+      "message": "Info object should contain `license` field.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/response-204-with-body/openapi.yaml"
+          },
+          "pointer": "#/info"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-tag-defined",
+      "severity": "warn",
+      "message": "Operation tags should be defined",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/response-204-with-body/openapi.yaml"
+          },
+          "pointer": "#/paths/~1users/get"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-description",
+      "severity": "warn",
+      "message": "Operation object should contain `description` field.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/response-204-with-body/openapi.yaml"
+          },
+          "pointer": "#/paths/~1users/get/description"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-response",
+      "severity": "warn",
+      "message": "Operation must have at least one `4XX` response.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/response-204-with-body/openapi.yaml"
+          },
+          "pointer": "#/paths/~1users/get/responses"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "errors": 3,
+    "warnings": 5,
+    "ignored": 0
+  },
+  "maturity": {
+    "level": "Non compliant"
+  }
+}

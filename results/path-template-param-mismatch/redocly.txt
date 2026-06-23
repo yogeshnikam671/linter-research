@@ -1,0 +1,15 @@
+validating scenarios/path-template-param-mismatch/openapi.yaml...
+scenarios/path-template-param-mismatch/openapi.yaml:
+  1:1    error    no-empty-servers         Servers must be present.
+  7:5    error    operation-summary        Operation object should contain `summary` field.
+  10:17  error    path-parameters-defined  Path parameter `id` is not used in the path `/users/{userId}`.
+  9:7    error    path-parameters-defined  The operation does not define the path parameter `{userId}` expected by path `/users/{userId}`.
+  7:5    error    security-defined         Every operation should have security defined on it or on the root level.
+  2:1    warning  info-license             Info object should contain `license` field.
+  15:7   warning  operation-4xx-response   Operation must have at least one `4XX` response.
+
+scenarios/path-template-param-mismatch/openapi.yaml: validated in 6ms
+
+❌ Validation failed with 5 errors and 2 warnings.
+run `redocly lint --generate-ignore-file` to add all problems to the ignore file.
+

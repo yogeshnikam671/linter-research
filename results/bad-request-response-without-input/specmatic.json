@@ -1,1 +1,159 @@
-permission denied while trying to connect to the docker API at unix:///Users/yogeshanandanikam/.docker/run/docker.sock
+Specmatic Enterprise v1.16.0
+Specmatic Core v2.46.4
+
+{
+  "version": "0.1.4",
+  "problems": [
+    {
+      "ruleId": "no-empty-servers",
+      "severity": "error",
+      "message": "Servers must be present.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/bad-request-response-without-input/openapi.yaml"
+          },
+          "pointer": "#/openapi"
+        }
+      ],
+      "requiredForMaturity": "Baseline"
+    },
+    {
+      "ruleId": "operation-summary",
+      "severity": "error",
+      "message": "Operation object should contain `summary` field.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/bad-request-response-without-input/openapi.yaml"
+          },
+          "pointer": "#/paths/~1health/get/summary"
+        }
+      ],
+      "requiredForMaturity": "Bronze"
+    },
+    {
+      "ruleId": "security-defined",
+      "severity": "error",
+      "message": "Every operation should have security defined on it or on the root level.",
+      "type": "security",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/bad-request-response-without-input/openapi.yaml"
+          },
+          "pointer": "#/paths/~1health/get"
+        }
+      ],
+      "requiredForMaturity": "Baseline"
+    },
+    {
+      "ruleId": "info-contact",
+      "severity": "warn",
+      "message": "Info object should contain `contact` field.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/bad-request-response-without-input/openapi.yaml"
+          },
+          "pointer": "#/info/contact"
+        }
+      ]
+    },
+    {
+      "ruleId": "info-license",
+      "severity": "warn",
+      "message": "Info object should contain `license` field.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/bad-request-response-without-input/openapi.yaml"
+          },
+          "pointer": "#/info"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-tag-defined",
+      "severity": "warn",
+      "message": "Operation tags should be defined",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/bad-request-response-without-input/openapi.yaml"
+          },
+          "pointer": "#/paths/~1health/get"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-description",
+      "severity": "warn",
+      "message": "Operation object should contain `description` field.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/bad-request-response-without-input/openapi.yaml"
+          },
+          "pointer": "#/paths/~1health/get/description"
+        }
+      ]
+    },
+    {
+      "ruleId": "path-segment-plural",
+      "severity": "warn",
+      "message": "path segment `health` should be plural.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/bad-request-response-without-input/openapi.yaml"
+          },
+          "pointer": "#/paths/~1health"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/bad-request-response-without-input/openapi.yaml"
+          },
+          "pointer": "#/paths/~1health/get/responses/400"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/bad-request-response-without-input/openapi.yaml"
+          },
+          "pointer": "#/paths/~1health/get/responses/422"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "errors": 3,
+    "warnings": 7,
+    "ignored": 0
+  },
+  "maturity": {
+    "level": "Non compliant"
+  }
+}

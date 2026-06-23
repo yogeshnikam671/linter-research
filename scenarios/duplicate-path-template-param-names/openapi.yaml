@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: Duplicate Path Templates By Param Name
+  version: 1.0.0
+paths:
+  /users/{id}:
+    get:
+      operationId: getUserById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+  /users/{userId}:
+    get:
+      operationId: getUserByUserId
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK

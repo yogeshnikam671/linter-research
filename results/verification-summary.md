@@ -28,8 +28,20 @@ Legend:
 | `oneof-identical-branches` | miss | miss | miss | miss | no tool flagged identical `oneOf` branches |
 | `only-failure-statuses` | hit | hit | hit | hit | Spectral/Vacuum: `operation-success-response`, Redocly/Specmatic: `operation-2xx-response` |
 | `query-serialization-collision` | miss | miss | miss | hit | `specmatic/query-param-collision` |
+| `response-202-without-monitor-link` | miss | miss | miss | miss | no tool required async follow-up link |
+| `response-204-with-body` | miss | miss | miss | miss | no tool objected to 204 carrying content |
+| `response-206-without-content-range` | miss | miss | miss | miss | no tool required `Content-Range` |
+| `response-304-with-body` | miss | miss | miss | miss | no tool objected to 304 carrying content |
+| `head-response-body` | miss | miss | miss | miss | no tool objected to HEAD carrying content schema |
+| `missing-retry-after-on-429` | miss | miss | miss | miss | no tool required `Retry-After` |
+| `missing-www-authenticate-on-401` | miss | miss | miss | miss | no tool required `WWW-Authenticate` |
+| `readonly-required-in-request` | miss | miss | miss | miss | no tool flagged impossible request shape |
 | `security-scheme-missing-401-403` | miss | partial | partial | partial | generic missing `4xx` / `401` style rules only |
 | `text-plain-object-schema` | miss | miss | miss | miss | no tool objected to object schema under `text/plain` |
+| `writeonly-required-in-response` | miss | miss | miss | miss | no tool flagged impossible response shape |
+| `overlapping-oneof-branches` | miss | miss | miss | miss | no tool flagged overlapping `oneOf` branches |
+| `duplicate-path-template-param-names` | hit | hit | miss | hit | Spectral: `path-params`, Redocly/Specmatic: ambiguous/identical path rules |
+| `path-template-param-mismatch` | hit | hit | hit | hit | all 4 caught missing/mismatched path params |
 
 ## Missed By Redocly, Spectral, Vacuum
 
@@ -51,7 +63,17 @@ These issues were **not caught by any of Redocly, Spectral, Vacuum** in current 
 | `oneof-duplicate-discriminator` | miss | no tool caught duplicate discriminator const |
 | `oneof-identical-branches` | miss | no tool caught duplicate `oneOf` branches |
 | `query-serialization-collision` | hit | Specmatic caught query serialization collision |
+| `response-202-without-monitor-link` | miss | no tool caught missing async follow-up link |
+| `response-204-with-body` | miss | no tool caught content on 204 |
+| `response-206-without-content-range` | miss | no tool caught missing `Content-Range` |
+| `response-304-with-body` | miss | no tool caught content on 304 |
+| `head-response-body` | miss | no tool caught content on HEAD |
+| `missing-retry-after-on-429` | miss | no tool caught missing `Retry-After` |
+| `missing-www-authenticate-on-401` | miss | no tool caught missing `WWW-Authenticate` |
+| `readonly-required-in-request` | miss | no tool caught impossible request shape |
 | `text-plain-object-schema` | miss | no tool caught object under `text/plain` |
+| `writeonly-required-in-response` | miss | no tool caught impossible response shape |
+| `overlapping-oneof-branches` | miss | no tool caught overlapping `oneOf` branches |
 
 ## Partial-Only Catch Cases
 

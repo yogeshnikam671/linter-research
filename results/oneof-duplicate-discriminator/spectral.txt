@@ -1,4 +1,4 @@
-(node:39802) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(node:76575) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
 
 /Users/yogeshanandanikam/Notes/specmatic/demo/scenarios/oneof-duplicate-discriminator/openapi.yaml

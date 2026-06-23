@@ -29,14 +29,14 @@
  ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
  oas3-missing-example                      3             ██████████████████████████████████████████████████
  component-description                     3             ██████████████████████████████████████████████████
- owasp-string-restricted                   2             █████████████████████████████████                 
  operation-description                     2             █████████████████████████████████                 
- owasp-define-error-responses-401          1             ████████████████                                  
+ owasp-string-restricted                   2             █████████████████████████████████                 
+ operation-4xx-response                    1             ████████████████                                  
+ owasp-protection-global-unsafe            1             ████████████████                                  
  owasp-define-error-responses-429          1             ████████████████                                  
- owasp-define-error-validation             1             ████████████████                                  
- oas3-api-servers                          1             ████████████████                                  
- info-contact                              1             ████████████████                                  
- info-description                          1             ████████████████                                  
+ owasp-rate-limit                          1             ████████████████                                  
+ operation-tags                            1             ████████████████                                  
+ openapi-tags                              1             ████████████████                                  
  ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
  total                                     24          
  ... and 8 more rules

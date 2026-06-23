@@ -1,0 +1,14 @@
+(node:75119) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+/Users/yogeshanandanikam/Notes/specmatic/demo/scenarios/duplicate-path-template-param-names/openapi.yaml
+  1:1   warning  oas3-api-servers       OpenAPI "servers" must be present and non-empty array.
+  2:6   warning  info-contact           Info object must have "contact" object.                            info
+  2:6   warning  info-description       Info "description" must be present and non-empty string.           info
+  7:9   warning  operation-description  Operation "description" must be present and non-empty string.      paths./users/{id}.get
+  7:9   warning  operation-tags         Operation must have non-empty "tags" array.                        paths./users/{id}.get
+ 18:19    error  path-params            Paths "/users/{id}" and "/users/{userId}" must not be equivalent.  paths./users/{userId}
+  19:9  warning  operation-description  Operation "description" must be present and non-empty string.      paths./users/{userId}.get
+  19:9  warning  operation-tags         Operation must have non-empty "tags" array.                        paths./users/{userId}.get
+
+✖ 8 problems (1 error, 7 warnings, 0 infos, 0 hints)

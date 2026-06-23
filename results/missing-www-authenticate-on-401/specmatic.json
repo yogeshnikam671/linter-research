@@ -1,0 +1,130 @@
+Specmatic Enterprise v1.16.0
+Specmatic Core v2.46.4
+
+{
+  "version": "0.1.4",
+  "problems": [
+    {
+      "ruleId": "no-empty-servers",
+      "severity": "error",
+      "message": "Servers must be present.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/missing-www-authenticate-on-401/openapi.yaml"
+          },
+          "pointer": "#/openapi"
+        }
+      ],
+      "requiredForMaturity": "Baseline"
+    },
+    {
+      "ruleId": "operation-summary",
+      "severity": "error",
+      "message": "Operation object should contain `summary` field.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/missing-www-authenticate-on-401/openapi.yaml"
+          },
+          "pointer": "#/paths/~1me/get/summary"
+        }
+      ],
+      "requiredForMaturity": "Bronze"
+    },
+    {
+      "ruleId": "info-contact",
+      "severity": "warn",
+      "message": "Info object should contain `contact` field.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/missing-www-authenticate-on-401/openapi.yaml"
+          },
+          "pointer": "#/info/contact"
+        }
+      ]
+    },
+    {
+      "ruleId": "info-license",
+      "severity": "warn",
+      "message": "Info object should contain `license` field.",
+      "type": "metadata",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/missing-www-authenticate-on-401/openapi.yaml"
+          },
+          "pointer": "#/info"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-tag-defined",
+      "severity": "warn",
+      "message": "Operation tags should be defined",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/missing-www-authenticate-on-401/openapi.yaml"
+          },
+          "pointer": "#/paths/~1me/get"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-description",
+      "severity": "warn",
+      "message": "Operation object should contain `description` field.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/missing-www-authenticate-on-401/openapi.yaml"
+          },
+          "pointer": "#/paths/~1me/get/description"
+        }
+      ]
+    },
+    {
+      "ruleId": "path-segment-plural",
+      "severity": "warn",
+      "message": "path segment `me` should be plural.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/missing-www-authenticate-on-401/openapi.yaml"
+          },
+          "pointer": "#/paths/~1me"
+        }
+      ]
+    },
+    {
+      "ruleId": "operation-4xx-problem-details-rfc7807",
+      "severity": "warn",
+      "message": "Response `4xx` must have content-type `application/problem+json`.",
+      "type": "operations",
+      "location": [
+        {
+          "source": {
+            "ref": "scenarios/missing-www-authenticate-on-401/openapi.yaml"
+          },
+          "pointer": "#/paths/~1me/get/responses/401"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "errors": 2,
+    "warnings": 6,
+    "ignored": 0
+  },
+  "maturity": {
+    "level": "Non compliant"
+  }
+}

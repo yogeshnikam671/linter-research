@@ -1,0 +1,12 @@
+validating scenarios/missing-retry-after-on-429/openapi.yaml...
+scenarios/missing-retry-after-on-429/openapi.yaml:
+  1:1  error    no-empty-servers   Servers must be present.
+  7:5  error    operation-summary  Operation object should contain `summary` field.
+  7:5  error    security-defined   Every operation should have security defined on it or on the root level.
+  2:1  warning  info-license       Info object should contain `license` field.
+
+scenarios/missing-retry-after-on-429/openapi.yaml: validated in 5ms
+
+❌ Validation failed with 3 errors and 1 warning.
+run `redocly lint --generate-ignore-file` to add all problems to the ignore file.
+

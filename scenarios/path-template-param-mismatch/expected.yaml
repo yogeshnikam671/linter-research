@@ -1,0 +1,17 @@
+intent: Detect path template variable without matching path parameter declaration.
+verificationStatus: verified
+actual:
+  spectral: hit
+  redocly: hit
+  vacuum: hit
+  specmatic: hit
+evidence:
+  spectral:
+    - path-params
+  redocly:
+    - path-parameters-defined
+  vacuum:
+    - path-params
+  specmatic:
+    - path-parameters-defined
+    - path-params-defined

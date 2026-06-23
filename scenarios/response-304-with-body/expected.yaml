@@ -1,0 +1,9 @@
+intent: Detect 304 response that incorrectly defines content.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss
+notes:
+  - Redocly and Specmatic complained about lack of 2xx success response, not about 304 carrying content.

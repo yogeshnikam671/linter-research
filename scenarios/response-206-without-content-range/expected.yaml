@@ -1,0 +1,7 @@
+intent: Detect 206 response without Content-Range header.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

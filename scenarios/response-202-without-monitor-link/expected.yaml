@@ -1,0 +1,7 @@
+intent: Detect 202 response with no Location or monitor link for async follow-up.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss
