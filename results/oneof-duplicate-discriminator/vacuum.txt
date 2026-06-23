@@ -1,0 +1,51 @@
+   
+ ██╗   ██╗ █████╗  ██████╗██╗   ██╗██╗   ██╗███╗   ███╗ 《《《─═─═── ·* · ˙*
+ ██║   ██║██╔══██╗██╔════╝██║   ██║██║   ██║████╗ ████║《《《──═─═──· ··* ˙˙
+ ██║   ██║███████║██║     ██║   ██║██║   ██║██╔████╔██║《《《───═─═─··· ˙˙ ˙
+ ╚██╗ ██╔╝██╔══██║██║     ██║   ██║██║   ██║██║╚██╔╝██║《《──═─═──·* ·· ˙˙
+  ╚████╔╝ ██║  ██║╚██████╗╚██████╔╝╚██████╔╝██║ ╚═╝ ██║ 《《─═─═──* · · ˙
+   ╚═══╝  ╚═╝  ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝ 《───═─═─· ··* ˙˙ ˙
+
+ version: v0.29.4 | compiled: Thu, 18 Jun 2026 22:02:16 UTC
+ https://quobix.com/vacuum/ | https://github.com/daveshanley/vacuum
+
+ | 🚨 HARD MODE ENABLED 🚨
+
+ vacuuming file '/work/scenarios/oneof-duplicate-discriminator/openapi.yaml' against 92 rules: https://quobix.com/vacuum/rulesets/all
+
+ category              ✗ errors      ▲ warnings    ● info                                                  
+ ────────────────────  ────────────  ────────────  ────────────────────────────────────────────────────────
+ Contract Information  1             0             2                                                       
+ Operations            0             1             0                                                       
+ Tags                  0             2             0                                                       
+ Validation            0             1             0                                                       
+ Descriptions          0             5             0                                                       
+ Examples              0             3             0                                                       
+ OWASP                 4             4             1                                                       
+ ────────────────────  ────────────  ────────────  ────────────────────────────────────────────────────────
+ total                 5             16            3                                                       
+
+ rule                                      violations    quality impact                                    
+ ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
+ oas3-missing-example                      3             ██████████████████████████████████████████████████
+ component-description                     3             ██████████████████████████████████████████████████
+ owasp-string-restricted                   2             █████████████████████████████████                 
+ operation-description                     2             █████████████████████████████████                 
+ owasp-define-error-responses-401          1             ████████████████                                  
+ owasp-define-error-responses-429          1             ████████████████                                  
+ owasp-define-error-validation             1             ████████████████                                  
+ oas3-api-servers                          1             ████████████████                                  
+ info-contact                              1             ████████████████                                  
+ info-description                          1             ████████████████                                  
+ ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
+ total                                     24          
+ ... and 8 more rules
+
+ --> use the <dashboard> command to be able to navigate results interactively <--
+
+ | Quality Score: 19/100 [🥵]
+
+ | ✗ Failed with 5 errors, 16 warnings and 3 informs.
+
+ use --debug if you want to enable developer logging
+

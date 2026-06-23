@@ -1,0 +1,12 @@
+validating scenarios/security-scheme-missing-401-403/openapi.yaml...
+scenarios/security-scheme-missing-401-403/openapi.yaml:
+  1:1   error    no-empty-servers        Servers must be present.
+  9:5   error    operation-summary       Operation object should contain `summary` field.
+  2:1   warning  info-license            Info object should contain `license` field.
+  11:7  warning  operation-4xx-response  Operation must have at least one `4XX` response.
+
+scenarios/security-scheme-missing-401-403/openapi.yaml: validated in 5ms
+
+❌ Validation failed with 2 errors and 2 warnings.
+run `redocly lint --generate-ignore-file` to add all problems to the ignore file.
+

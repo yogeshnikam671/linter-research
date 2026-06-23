@@ -1,0 +1,51 @@
+   
+ ██╗   ██╗ █████╗  ██████╗██╗   ██╗██╗   ██╗███╗   ███╗ 《《《─═─═── ·* · ˙*
+ ██║   ██║██╔══██╗██╔════╝██║   ██║██║   ██║████╗ ████║《《《──═─═──· ··* ˙˙
+ ██║   ██║███████║██║     ██║   ██║██║   ██║██╔████╔██║《《《───═─═─··· ˙˙ ˙
+ ╚██╗ ██╔╝██╔══██║██║     ██║   ██║██║   ██║██║╚██╔╝██║《《──═─═──·* ·· ˙˙
+  ╚████╔╝ ██║  ██║╚██████╗╚██████╔╝╚██████╔╝██║ ╚═╝ ██║ 《《─═─═──* · · ˙
+   ╚═══╝  ╚═╝  ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝ 《───═─═─· ··* ˙˙ ˙
+
+ version: v0.29.4 | compiled: Thu, 18 Jun 2026 22:02:16 UTC
+ https://quobix.com/vacuum/ | https://github.com/daveshanley/vacuum
+
+ | 🚨 HARD MODE ENABLED 🚨
+
+ vacuuming file '/work/scenarios/method-returns-201/openapi.yaml' against 92 rules: https://quobix.com/vacuum/rulesets/all
+
+ category              ✗ errors      ▲ warnings    ● info                                                  
+ ────────────────────  ────────────  ────────────  ────────────────────────────────────────────────────────
+ Contract Information  1             0             2                                                       
+ Operations            0             3             0                                                       
+ Tags                  0             4             0                                                       
+ Validation            0             1             0                                                       
+ Descriptions          0             5             2                                                       
+ Examples              0             2             0                                                       
+ OWASP                 7             12            3                                                       
+ ────────────────────  ────────────  ────────────  ────────────────────────────────────────────────────────
+ total                 8             27            7                                                       
+
+ rule                                      violations    quality impact                                    
+ ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
+ operation-description                     4             ██████████████████████████████████████████████████
+ owasp-define-error-responses-500          3             █████████████████████████████████████             
+ owasp-define-error-validation             3             █████████████████████████████████████             
+ operation-tags                            3             █████████████████████████████████████             
+ owasp-define-error-responses-401          3             █████████████████████████████████████             
+ operation-4xx-response                    3             █████████████████████████████████████             
+ owasp-define-error-responses-429          3             █████████████████████████████████████             
+ owasp-rate-limit                          3             █████████████████████████████████████             
+ owasp-protection-global-unsafe-strict     2             █████████████████████████                         
+ oas3-missing-example                      2             █████████████████████████                         
+ ────────────────────────────────────────  ────────────  ──────────────────────────────────────────────────
+ total                                     42          
+ ... and 10 more rules
+
+ --> use the <dashboard> command to be able to navigate results interactively <--
+
+ | Quality Score: 10/100 [🥵]
+
+ | ✗ Failed with 8 errors, 27 warnings and 7 informs.
+
+ use --debug if you want to enable developer logging
+

@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: Query Serialization Collision
+  version: 1.0.0
+paths:
+  /search:
+    get:
+      operationId: search
+      parameters:
+        - name: id
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: filter
+          in: query
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+      responses:
+        "200":
+          description: OK

@@ -1,0 +1,7 @@
+intent: Detect required object query param whose fields are all optional.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

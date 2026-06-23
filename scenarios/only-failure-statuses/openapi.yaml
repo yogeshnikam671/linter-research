@@ -1,0 +1,13 @@
+openapi: 3.0.3
+info:
+  title: Only Failure Statuses
+  version: 1.0.0
+paths:
+  /reports:
+    get:
+      operationId: getReports
+      responses:
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error

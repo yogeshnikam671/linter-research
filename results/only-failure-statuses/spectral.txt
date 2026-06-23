@@ -1,0 +1,12 @@
+(node:40122) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+/Users/yogeshanandanikam/Notes/specmatic/demo/scenarios/only-failure-statuses/openapi.yaml
+  1:1  warning  oas3-api-servers            OpenAPI "servers" must be present and non-empty array.
+  2:6  warning  info-contact                Info object must have "contact" object.                        info
+  2:6  warning  info-description            Info "description" must be present and non-empty string.       info
+  7:9  warning  operation-description       Operation "description" must be present and non-empty string.  paths./reports.get
+  7:9  warning  operation-tags              Operation must have non-empty "tags" array.                    paths./reports.get
+ 9:17  warning  operation-success-response  Operation must have at least one "2xx" or "3xx" response.      paths./reports.get.responses
+
+✖ 6 problems (0 errors, 6 warnings, 0 infos, 0 hints)

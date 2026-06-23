@@ -1,0 +1,18 @@
+openapi: 3.0.3
+info:
+  title: Security Without 401 Or 403
+  version: 1.0.0
+security:
+  - bearerAuth: []
+paths:
+  /me:
+    get:
+      operationId: getProfile
+      responses:
+        "200":
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

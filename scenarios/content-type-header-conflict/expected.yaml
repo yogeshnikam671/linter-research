@@ -1,0 +1,11 @@
+intent: Detect Content-Type header that contradicts requestBody media type.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: hit
+evidence:
+  specmatic:
+    - specmatic/content-type-header-declared
+    - specmatic/content-type-header-overrides-media-type

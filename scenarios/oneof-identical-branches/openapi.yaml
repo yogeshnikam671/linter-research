@@ -1,0 +1,22 @@
+openapi: 3.0.3
+info:
+  title: Identical oneOf Branches
+  version: 1.0.0
+paths:
+  /users:
+    get:
+      operationId: listUsers
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    oneOf:
+                      - type: string
+                        enum: [active, inactive]
+                      - type: string
+                        enum: [active, inactive]

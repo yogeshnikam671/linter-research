@@ -1,0 +1,10 @@
+intent: Detect Authorization header contract that contradicts declared bearer security scheme.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: hit
+evidence:
+  specmatic:
+    - specmatic/security-property-redefined

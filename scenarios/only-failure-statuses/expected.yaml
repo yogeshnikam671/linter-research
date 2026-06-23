@@ -1,0 +1,16 @@
+intent: Detect operation with no success response status.
+verificationStatus: verified
+actual:
+  spectral: hit
+  redocly: hit
+  vacuum: hit
+  specmatic: hit
+evidence:
+  spectral:
+    - operation-success-response
+  redocly:
+    - operation-2xx-response
+  vacuum:
+    - operation-success-response
+  specmatic:
+    - operation-2xx-response

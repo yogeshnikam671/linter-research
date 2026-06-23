@@ -1,0 +1,7 @@
+intent: Detect path template with adjacent path params and no separator.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

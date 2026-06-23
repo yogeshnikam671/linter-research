@@ -1,0 +1,9 @@
+intent: Detect allOf composition that makes schema impossible to satisfy.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss
+notes:
+  - Vacuum hard-mode did not surface target contradiction in this fixture.

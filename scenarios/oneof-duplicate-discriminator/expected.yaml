@@ -1,0 +1,9 @@
+intent: Detect duplicate discriminator value across oneOf branches.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss
+notes:
+  - Fixture moved to OpenAPI 3.1 so `const` is legal; no linter surfaced duplicate discriminator value.

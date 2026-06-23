@@ -1,0 +1,16 @@
+intent: Detect secured API that never documents auth failure response.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: partial
+  vacuum: partial
+  specmatic: partial
+evidence:
+  redocly:
+    - operation-4xx-response
+  vacuum:
+    - owasp-define-error-responses-401
+  specmatic:
+    - operation-4xx-response
+notes:
+  - No tool produced target-specific missing 401-or-403 rule in this fixture.

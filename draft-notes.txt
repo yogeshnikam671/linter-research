@@ -1,0 +1,104 @@
+Linter Cases That Static Linters Miss
+Yet to be tested
+
+specmatic/missing-schema-fallback
+specmatic/pattern-length-incompatible
+do the linters handle recursive schemas
+overlapping examples
+ambiguous interpolated paths (/orders/{orderId}{trackingId})
+ambiguous (/orders/{status}, /status/{vertical})
+
+ambiguous content-type (application/*, */json)
+oneOf with both discriminator properties having the same const value
+discriminator:
+  propertyName: type
+oneOf:
+  - type: object
+    properties:
+      type: { const: "user" }
+      name: { type: string }
+  - type: object
+    properties:
+      type: { const: "user" }
+      company: { type: string }
+
+oneOf where both schemas look identical
+properties:
+  status:
+    oneOf:
+      - type: string
+        enum: [active, inactive]
+      - type: string
+        enum: [active, inactive]
+
+Unreachable branch
+paths:
+  /users:
+    get:
+      responses:
+        '201':
+          description: User created```
+
+GET / PATCH / DELETE returns 201 (none of them can create)
+GET returns 204 (GET is supposed to return something, can't be 204 "No Content")
+security scheme is defined on an API but neither 401 nor 403 are defined (how will the API signal auth failure)
+APIs with no 2/3xx statuses (can't have an API with only failures statuses)
+400 or 422 response defined in an API with no parameters or request body (if there are no parameters, then what's the 400 / 422 for?)
+400 or 422 is not defined in an API with a request body or parameters (if a bad request is sent, how will it signal that there's bad request)
+in type: object, minProperties is N (say 3) but there are fewer than N properties defined and `additionalProperties: false`
+Discriminator property is not required in the spec
+Discriminator property has incompatible types across different oneOf options
+schema of text/plain has type: object
+Content-Type declared in spec contradicts the media type
+Authorization header declared in spec contradicts security scheme (e.g. Authorization declared with a regex, and bearer securityScheme also declared on the API)
+
+Less Interesting Candidates
+
+204 (no content) defines a body schema (204 is not supposed to return content)
+GET with required requestBody (GET is suppposed to work with query params)
+304 defines content (304 is supposed to mean "not modified" and return nothing in the body)
+HEAD /resource defines a response body schema (head is not supposed to return a body)
+302 defined without a Location header
+
+
+
+
+Here's the summary of those issues:
+  - allOf contradiction: two valid schemas become impossible when composed.
+
+  currency: [USD]
+  currency: [EUR]
+
+  caught by Vacuum, not by Spectral
+
+  - Content-Type conflict: header says XML, request body only allows JSON.
+
+    Specmatic rule: specmatic/content-type-header-overrides-media-type
+
+  Content-Type: application/xml
+  requestBody:
+    content:
+      application/json: ...
+
+  - Accept conflict: client asks for XML, response only produces JSON.
+
+  Specmatic rule: specmatic/accept-response-content-type-conflict
+
+  Accept: application/xml
+  responses:
+    '200':
+      content:
+        application/json: ...
+
+  - Query collision: two params serialize to the same query key id.
+
+  ? id=123
+  ? filter[id]=123
+
+  - Misleading required query object: parameter is required, but none of its fields are.
+
+  required: true
+  schema:
+    type: object
+    properties:
+      status: { type: string }

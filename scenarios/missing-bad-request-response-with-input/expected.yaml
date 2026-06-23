@@ -1,0 +1,16 @@
+intent: Detect write operation with input but no 400 or 422 response.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: partial
+  vacuum: partial
+  specmatic: partial
+evidence:
+  redocly:
+    - operation-4xx-response
+  vacuum:
+    - operation-4xx-response
+  specmatic:
+    - operation-4xx-response
+notes:
+  - Detected as generic missing 4xx response, not specifically missing 400 or 422.

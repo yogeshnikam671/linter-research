@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: Ambiguous Sibling Paths
+  version: 1.0.0
+paths:
+  /orders/{status}:
+    get:
+      operationId: getOrdersByStatus
+      parameters:
+        - name: status
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+  /orders/pending:
+    get:
+      operationId: getPendingOrders
+      responses:
+        "200":
+          description: OK

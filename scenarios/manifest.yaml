@@ -1,0 +1,52 @@
+implemented:
+  - slug: ambiguous-interpolated-paths
+    category: path-semantics
+  - slug: ambiguous-sibling-paths
+    category: path-semantics
+  - slug: oneof-duplicate-discriminator
+    category: schema-logic
+  - slug: oneof-identical-branches
+    category: schema-logic
+  - slug: security-scheme-missing-401-403
+    category: auth-semantics
+  - slug: only-failure-statuses
+    category: response-semantics
+  - slug: bad-request-response-without-input
+    category: request-semantics
+  - slug: missing-bad-request-response-with-input
+    category: request-semantics
+  - slug: impossible-min-properties
+    category: schema-logic
+  - slug: text-plain-object-schema
+    category: media-types
+  - slug: content-type-header-conflict
+    category: media-types
+  - slug: accept-response-content-type-conflict
+    category: media-types
+  - slug: authorization-header-conflict
+    category: auth-semantics
+  - slug: query-serialization-collision
+    category: request-semantics
+  - slug: misleading-required-query-object
+    category: request-semantics
+  - slug: allof-contradiction
+    category: schema-logic
+  - slug: get-returns-204
+    category: response-semantics
+  - slug: method-returns-201
+    category: response-semantics
+backlog:
+  - specmatic/missing-schema-fallback
+  - specmatic/pattern-length-incompatible
+  - recursive-schemas
+  - overlapping-examples
+  - ambiguous-content-type-wildcards
+  - unreachable-branch
+  - discriminator-property-not-required
+  - discriminator-property-type-mismatch
+  - no-success-statuses-with-security
+  - response-204-with-body
+  - get-with-required-request-body
+  - response-304-with-body
+  - head-response-body
+  - redirect-302-without-location

@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  title: Accept Header Conflict
+  version: 1.0.0
+paths:
+  /exports:
+    get:
+      operationId: getExport
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum: [application/xml]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string

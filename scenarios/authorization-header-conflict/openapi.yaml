@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: Authorization Header Conflict
+  version: 1.0.0
+paths:
+  /payments:
+    get:
+      operationId: listPayments
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            pattern: "^Basic [A-Za-z0-9+/=]+$"
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

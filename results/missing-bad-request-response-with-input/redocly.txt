@@ -1,0 +1,13 @@
+validating scenarios/missing-bad-request-response-with-input/openapi.yaml...
+scenarios/missing-bad-request-response-with-input/openapi.yaml:
+  1:1   error    no-empty-servers        Servers must be present.
+  7:5   error    operation-summary       Operation object should contain `summary` field.
+  7:5   error    security-defined        Every operation should have security defined on it or on the root level.
+  2:1   warning  info-license            Info object should contain `license` field.
+  19:7  warning  operation-4xx-response  Operation must have at least one `4XX` response.
+
+scenarios/missing-bad-request-response-with-input/openapi.yaml: validated in 5ms
+
+❌ Validation failed with 3 errors and 2 warnings.
+run `redocly lint --generate-ignore-file` to add all problems to the ignore file.
+

@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: text/plain Object Schema
+  version: 1.0.0
+paths:
+  /messages:
+    post:
+      operationId: createMessage
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: object
+              properties:
+                body:
+                  type: string
+      responses:
+        "201":
+          description: Created

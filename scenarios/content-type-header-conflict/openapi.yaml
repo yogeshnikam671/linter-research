@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: Content-Type Header Conflict
+  version: 1.0.0
+paths:
+  /imports:
+    post:
+      operationId: createImport
+      parameters:
+        - name: Content-Type
+          in: header
+          required: true
+          schema:
+            type: string
+            enum: [application/xml]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fileName:
+                  type: string
+      responses:
+        "201":
+          description: Created

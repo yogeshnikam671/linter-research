@@ -1,0 +1,7 @@
+intent: Detect GET operation that only returns 204.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

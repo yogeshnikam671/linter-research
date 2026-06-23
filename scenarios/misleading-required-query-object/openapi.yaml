@@ -1,0 +1,24 @@
+openapi: 3.0.3
+info:
+  title: Misleading Required Query Object
+  version: 1.0.0
+paths:
+  /orders:
+    get:
+      operationId: listOrders
+      parameters:
+        - name: filters
+          in: query
+          required: true
+          style: deepObject
+          explode: true
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+              region:
+                type: string
+      responses:
+        "200":
+          description: OK

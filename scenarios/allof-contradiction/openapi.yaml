@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: allOf Contradiction
+  version: 1.0.0
+paths:
+  /accounts:
+    post:
+      operationId: createAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - type: object
+                  required: [currency]
+                  properties:
+                    currency:
+                      type: string
+                      enum: [USD]
+                - type: object
+                  required: [currency]
+                  properties:
+                    currency:
+                      type: string
+                      enum: [EUR]
+      responses:
+        "201":
+          description: Created

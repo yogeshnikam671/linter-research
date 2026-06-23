@@ -1,0 +1,43 @@
+openapi: 3.1.0
+info:
+  title: Duplicate Discriminator Const
+  version: 1.0.0
+paths:
+  /actors:
+    post:
+      operationId: createActor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Actor"
+      responses:
+        "201":
+          description: Created
+components:
+  schemas:
+    Actor:
+      discriminator:
+        propertyName: type
+      oneOf:
+        - $ref: "#/components/schemas/User"
+        - $ref: "#/components/schemas/Company"
+    User:
+      type: object
+      required: [type, name]
+      properties:
+        type:
+          type: string
+          const: user
+        name:
+          type: string
+    Company:
+      type: object
+      required: [type, company]
+      properties:
+        type:
+          type: string
+          const: user
+        company:
+          type: string

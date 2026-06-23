@@ -1,0 +1,7 @@
+intent: Detect bad-request style responses when operation has no params or request body.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

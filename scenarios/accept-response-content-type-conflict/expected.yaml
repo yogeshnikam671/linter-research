@@ -1,0 +1,12 @@
+intent: Detect Accept header that contradicts response media type.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: hit
+evidence:
+  specmatic:
+    - specmatic/accept-response-content-type-conflict
+notes:
+  - Baseline outputs still include generic metadata/style findings.

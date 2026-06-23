@@ -1,0 +1,7 @@
+intent: Detect literal path that is shadowed by generic sibling path param.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

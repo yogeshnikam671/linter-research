@@ -1,0 +1,10 @@
+intent: Detect two query params that serialize to same key name.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: hit
+evidence:
+  specmatic:
+    - specmatic/query-param-collision

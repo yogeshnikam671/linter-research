@@ -1,0 +1,7 @@
+intent: Detect GET, PATCH, and DELETE documented as returning creation status 201.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

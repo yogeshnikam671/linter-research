@@ -1,0 +1,7 @@
+intent: Detect oneOf branches that are structurally identical and therefore non-discriminating.
+verificationStatus: verified
+actual:
+  spectral: miss
+  redocly: miss
+  vacuum: miss
+  specmatic: miss

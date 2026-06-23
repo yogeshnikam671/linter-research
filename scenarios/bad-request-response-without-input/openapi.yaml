@@ -1,0 +1,15 @@
+openapi: 3.0.3
+info:
+  title: 400 Or 422 Without Input
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad request
+        "422":
+          description: Unprocessable entity
